@@ -31,6 +31,7 @@ def sync_generate(requests: list):
         base_url=BASE_URL,
         api_key=os.environ["OPENROUTER_API_KEY"],
     )
+
     for req in requests:
         resp = client.chat.completions.create(
             model=MODEL,
@@ -57,12 +58,14 @@ async def ask_once(client: AsyncOpenAI, prompt: str) -> str:
                     temperature=0.3,
                 )
             return resp.choices[0].message.content
+        
         except OpenAIError as e:
             status = getattr(e, "status_code", None)
             permanent = status in (400, 401, 403, 404)
             if permanent or attempt == MAX_ATTEMPTS:
                 print(f"Error {e}. Stopping.")
                 raise
+            
             wait = 10 * attempt
             print(f"Error {e}. Retrying in {wait}s...")
             await asyncio.sleep(wait)
@@ -78,13 +81,14 @@ async def async_generate(requests: list):
     prompts = [make_prompt(req.title) for req in requests]
     coroutines = [ask_once(client, p) for p in prompts]
     answers = await asyncio.gather(*coroutines)
+    
     for req, answer in zip(requests, answers):
         print(f"{req.request_id}: {answer}")
 
 def dspy():
     import dspy
 
-    documents = load_documents(str(ROOT / "data" / "neuclir3-small-corpus-eng.jsonl"))
+    documents = load_documents(str(ROOT / "data/neuclir3-small-corpus-eng.jsonl"))
     document_text = documents[0].text
 
     lm = dspy.LM(
