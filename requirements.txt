@@ -8,3 +8,11 @@ aiolimiter>=1.2.0
 nltk
 ddgs
 tabulate
+openai
+python-dotenv
+whoosh
+beautifulsoup4
+requests
+matplotlib
+scipy
+google-search-results

@@ -14,3 +14,7 @@ def load_documents(path: str) -> list[Document]:
             if line:
                 documents.append(Document.model_validate_json(line))
     return documents
+
+def load_documents_by_id(path: str) -> dict[str, Document]: 
+    """Load documents indexed by doc_id.""" 
+    return {doc.doc_id: doc for doc in load_documents(path)}
