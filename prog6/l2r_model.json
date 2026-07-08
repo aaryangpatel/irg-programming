@@ -1,0 +1,12 @@
+{
+  "normalization": "zscore",
+  "train_map": 0.4023,
+  "test_map": 0.1003,
+  "model": "out/l2r-zscore-model.txt",
+  "features": [
+    "bm25_score",
+    "bm25_rr",
+    "plaidx_score",
+    "plaidx_rr"
+  ]
+}

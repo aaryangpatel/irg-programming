@@ -1,0 +1,10 @@
+Z-score Normalization
+=============================================
+
+Raw train MAP:     0.4044
+Raw test MAP:      0.0656
+
+Z-score train MAP: 0.4023
+Z-score test MAP:  0.1003
+Test delta: +0.0347
+Conclusion: Z-score normalization helps on the test query.
