@@ -3,9 +3,9 @@ cd "$(dirname "$0")/.."
 source .venv/bin/activate
 
 TREC_EVAL_DIR="$(pwd)/tools/trec_eval"
-TREC_EVAL_BIN="$TREC_EVAL_DIR/trec_eval"
+TREC_EVAL="$TREC_EVAL_DIR/trec_eval"
 
-if [ ! -x "$TREC_EVAL_BIN" ]; then
+if [ ! -x "$TREC_EVAL" ]; then
   echo "Building trec_eval..."
   mkdir -p tools
   if [ ! -d "$TREC_EVAL_DIR/.git" ]; then

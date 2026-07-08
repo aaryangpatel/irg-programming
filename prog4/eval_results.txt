@@ -1,0 +1,19 @@
+=== bm25 (title only) ===
+map: 0.1084
+ndcg@20: 0.2925
+num_q: 3
+
+=== bm25 (full query) ===
+map: 0.1235
+ndcg@20: 0.2172
+num_q: 3
+
+=== prog1 (word overlap) ===
+map: 0.1336
+ndcg@20: 0.2110
+num_q: 3
+
+=== plaidx (baseline) ===
+map: 0.3016
+ndcg@20: 0.4366
+num_q: 3
