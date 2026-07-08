@@ -15,8 +15,15 @@ wheels/
 # private
 prog1sol/
 
+# local tools (do not commit)
+tools/
+
+# prog4 generated artifacts (do not commit)
+prog4/index/
+
 # prog6 generated artifacts and local binaries (do not commit)
 RankLib-2.18.jar
 RankLib.jar
 prog6/out/
 prog6/features/
+prog6/l2r.run

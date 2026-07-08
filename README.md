@@ -1,8 +1,6 @@
 # Information Retrieval and Generation Systems
 
-Programming Homework (Templates)
-
-Replace this line with your name. 
+Aaryan Patel
 
 ---
 
